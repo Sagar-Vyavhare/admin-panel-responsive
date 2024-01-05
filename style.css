@@ -622,9 +622,6 @@ main .orders tr a {
   main .user-list .user {
     flex-basis: 30%;
   }
-  main .orders {
-   display: none;
-  }
 
   .right-section .nav{
     position: fixed;
