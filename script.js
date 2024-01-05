@@ -1,6 +1,7 @@
 let sideMenu = document.querySelector("aside");
 let menuBtn = document.querySelector("#menu-btn");
 let closeBtn = document.querySelector(".close");
+let outsideNave = document.querySelector("main");
 
 let mode = document.querySelector(".mode");
 mode.addEventListener("click", () => {
@@ -12,6 +13,9 @@ mode.addEventListener("click", () => {
  
 });
 
+outsideNave.addEventListener("click", () => {
+  sideMenu.style.display = "none";
+});
 
 menuBtn.addEventListener("click", () => {
   console.log("you clicked me");
