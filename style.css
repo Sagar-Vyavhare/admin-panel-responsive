@@ -618,9 +618,12 @@ main .orders tr a {
     display: inline-block;
     cursor: pointer;
   }
+  main{
+    margin-right: 1rem;
+    
+  }
   main .analys {
     grid-template-columns: 1fr;
-    margin-right: 1rem;
     
   }
 
