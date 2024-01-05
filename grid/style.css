@@ -1,0 +1,10 @@
+body{
+    /* width: 96dvw; */
+    background-color: aqua;
+    display: grid;
+    grid-template-columns: 1fr auto 2fr;
+    gap: 2rem;
+    grid-template-rows: 2fr,2fr;
+
+    
+}

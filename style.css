@@ -1,0 +1,628 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --color-primary: #6c9bcf;
+  --color-danger: #ff0060;
+  --color-success: #1b9c85;
+  --color-warning: #f7d060;
+  --color-white: #fff;
+  --color-info-dark: #7d8da1;
+  --color-dark: #363949;
+  --color-light: rgba(132, 139, 200, 0.18);
+  --color-dark-variant: #677483;
+  --color-background: #f6f6f9;
+
+  --card-border-radius: 2rem;
+  --border-radius-1: 0.4rem;
+  --border-radius-2: 1.2rem;
+
+  --transition-all-1: all 0.2s ease;
+
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.dark-mode-variables {
+  --color-background: #181a1e;
+  --color-white: #202528;
+  --color-dark: #edeffd;
+  --color-dark-variant: #a3bdcc;
+  --color-light: rgba(0, 0, 0, 0.4);
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+* {
+  margin: 0;
+  outline: none;
+  appearance: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+html {
+  font-size: 14px;
+}
+
+body {
+  width: 100dvw;
+  height: 100dvh;
+  font-family: "poppins", sans-serif;
+  font-size: 0.88rem;
+  -webkit-user-select: none;
+  user-select: none;
+  overflow-x: hidden;
+  color: var(--color-dark);
+  background-color: var(--color-background);
+}
+a {
+  color: var(--color-dark);
+}
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+h1 {
+  font-weight: 800;
+  font-size: 1.8rem;
+}
+h2 {
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+h3 {
+  font-weight: 500;
+  font-size: 0.87rem;
+}
+small {
+  font-size: 0.76rem;
+}
+
+p {
+  color: var(--color-dark-variant);
+}
+b {
+  color: var(--color-dark);
+}
+
+.text-muted {
+  color: var(--color-info-dark);
+}
+
+.primary {
+  color: var(--color-primary);
+}
+
+.danger {
+  color: var(--color-danger);
+}
+
+.success {
+  color: var(--color-success);
+}
+
+.warning {
+  color: var(--color-warning);
+}
+
+.container {
+  display: grid;
+  width: 96dvw;
+  margin: 0 auto;
+  gap: 2dvw;
+  grid-template-columns: 12rem auto 24rem;
+}
+
+aside {
+  height: 100dvh;
+}
+
+aside .toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.4rem;
+}
+
+aside .toggle .logo {
+  display: flex;
+  gap: 0.5rem;
+}
+aside .toggle .logo img {
+  width: 2rem;
+  height: 2rem;
+}
+aside .toggle .close {
+  padding-right: 1rem;
+  display: none;
+}
+
+aside .sidebar {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius-1);
+  height: 88dvh;
+  position: relative;
+  top: 1.5rem;
+  transition: var(--transition-all-1);
+}
+
+aside .sidebar:hover {
+  box-shadow: none;
+}
+
+aside .sidebar a {
+  display: flex;
+  align-items: center;
+  color: var(--color-info-dark);
+  height: 3.7rem;
+  gap: 1rem;
+  transition: var(--transition-all-1);
+  margin: 0.2rem 1rem;
+  padding: 0 0.3rem;
+  position: relative;
+}
+
+aside .sidebar span {
+  font-size: 1.8rem;
+  transition: var(--transition-all-1);
+}
+aside .sidebar a:last-child {
+  position: absolute;
+  bottom: 0rem;
+}
+aside .sidebar a.active {
+  background: var(--color-light);
+  margin: 0;
+  padding: 0;
+}
+
+aside .sidebar a.active::before {
+  content: "";
+  height: 100%;
+  width: 0.5rem;
+  background-color: var(--color-danger);
+  position: absolute;
+  left: 0%;
+}
+
+aside .sidebar a.active span {
+  color: var(--color-primary);
+  margin-left: 1.5rem;
+  padding-left: 0.8rem;
+}
+
+aside .sidebar a:hover:not(.active) span {
+  margin-left: 0.5rem;
+}
+
+aside .sidebar .message_count {
+  background-color: var(--color-danger);
+  padding: 0.1rem;
+  font-size: 0.8rem;
+  color: var(--color-white);
+  border-radius: var(--border-radius-2);
+}
+
+main {
+  margin-top: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+main .analys {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+main .analys > div {
+  background-color: var(--color-white);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: var(--transition-all-1);
+  box-shadow: var(--box-shadow);
+}
+
+main .analys > div:hover {
+  box-shadow: none;
+}
+
+main .analys .status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main .analys .status h3 {
+  margin-left: 0.6rem;
+  font-size: 1rem;
+}
+
+main .analys .progress {
+  position: relative;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  /* z-index: 200; */
+}
+main .analys .progress svg {
+  width: 7rem;
+  height: 7rem;
+}
+
+main .analys .progress svg circle {
+  fill: transparent;
+  stroke-width: 10;
+  stroke-linecap: round;
+
+  transform: translate(5px, 5px);
+}
+main .analys .sales .progress svg circle {
+  stroke: var(--color-success);
+  stroke-dashoffset: 250;
+  stroke-dasharray: 200;
+}
+main .analys .visits .progress svg circle {
+  stroke: var(--color-danger);
+  stroke-dashoffset: 250;
+  stroke-dasharray: 200;
+}
+main .analys .profit .progress svg circle {
+  stroke: var(--color-primary);
+  stroke-dashoffset: 250;
+  stroke-dasharray: 200;
+}
+main .analys .progress .percentage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+main .new-users {
+  margin-top: 2rem;
+}
+
+main .new-users .user-list {
+  background-color: var(--color-white);
+  border-radius: var(--card-border-radius);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 2rem;
+  gap: 1.4rem;
+  margin-top: 1rem;
+  justify-content: space-around;
+}
+
+main .new-users .user-list .user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  flex-wrap: wrap;
+  cursor: pointer;
+  padding: 1rem;
+  border: 2px dashed transparent;
+  border-radius: var(--border-radius-2);
+  transition: var(--transition-all-1);
+  transform: scale(0.9);
+  margin: 1rem 0;
+}
+main .new-users .user-list .user:last-child {
+  border: 2px dashed transparent;
+  cursor: pointer;
+  animation: in-out 2s ease infinite alternate-reverse both;
+}
+main .new-users .user-list .user:last-child:hover {
+  border: 2px dashed var(--color-primary);
+}
+
+main .new-users .user-list .user:hover:not(:last-child) {
+  box-shadow: var(--box-shadow);
+  border: 2px dashed var(--color-danger);
+  transform: scale(1);
+}
+main .new-users .user-list .user img {
+  width: 3.5rem;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+main .new-users .user-list .user h2 {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+main .new-users .user-list .user p {
+  font-size: 0.7rem;
+}
+
+main .orders {
+  margin-top: 1rem;
+}
+main .orders table {
+  background-color: var(--color-white);
+  /* border-collapse:collapse ; */
+  width: 100%;
+  padding: var(--card-padding);
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius-2);
+}
+main .orders table tbody td {
+  height: 1.8rem;
+  border-bottom: 1px solid var(--color-light);
+}
+main .orders table tr .active {
+  color: var(--color-primary);
+}
+main .orders table tr .decliend {
+  color: var(--color-danger);
+}
+
+main .orders table tr:last-child td {
+  border-bottom: none;
+}
+main .orders table tr .pending {
+  color: var(--color-warning);
+}
+main .orders tr a {
+  text-align: center;
+  display: block;
+  margin: 0.4rem;
+  color: var(--color-primary);
+}
+
+/* right section */
+
+.right-section .nav {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.right-section .nav img {
+  width: 2rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+.right-section .nav .mode,
+.right-section .nav .profile {
+  display: flex;
+  align-items: center;
+}
+.right-section .nav .profile {
+  gap: 1rem;
+  justify-self: end;
+}
+
+.right-section .nav .profile .info,
+.right-section .nav .profile .profile-photo {
+  margin-left: 0.1rem;
+}
+
+.right-section .nav .mode {
+  background-color: var(--color-white);
+  padding: 0.2rem;
+  border-radius: var(--border-radius-1);
+  gap: 0.3rem;
+}
+
+.right-section .nav .mode span {
+  font-size: 1.2rem;
+  display: block;
+  padding: 0.2rem;
+  cursor: pointer;
+}
+
+.right-section .nav .mode .active {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  margin: 0;
+  padding: 0;
+  border-radius: var(--border-radius-1);
+}
+
+.right-section .nav #menu-btn {
+  display: none;
+}
+
+.right-section .user-profile {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 1rem;
+  background-color: var(--color-white);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--box-shadow);
+  padding: var(--card-padding);
+  cursor: pointer;
+  transition: var(--transition-all-1);
+}
+.right-section .user-profile:hover {
+  box-shadow: none;
+}
+.right-section .user-profile img {
+  width: 11rem;
+  height: auto;
+  margin-bottom: 0.8rem;
+  border-radius: 50%;
+}
+
+.right-section .user-profile h2 {
+  margin-bottom: 0.2rem;
+}
+
+.right-section .reminders {
+  margin-top: 2rem;
+}
+
+.right-section .reminders .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
+.right-section .reminders .header span {
+  background-color: var(--color-white);
+  box-shadow: var(--box-shadow);
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.right-section .reminders .notification {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+  background-color: var(--color-white);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  cursor: pointer;
+  transition: var(--transition-all-1);
+  box-shadow: var(--box-shadow);
+}
+
+.right-section .reminders .notification:hover {
+  box-shadow: none;
+}
+
+.right-section .reminders .notification .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.right-section .reminders .notification .icon {
+  background-color: var(--color-success);
+  color: var(--color-white);
+  border-radius: 20%;
+  padding: 0.3rem;
+  display: flex;
+}
+
+.right-section .reminders .notification.deactive .icon {
+  background-color: var(--color-danger);
+}
+
+.right-section .reminders .notification.add-reminders {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--color-primary);
+}
+
+.right-section .reminders .notification.add-reminders div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.right-section .reminders .notification.add-reminders:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+@keyframes in-out {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+/* responsive media queriws */
+
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 95dvw;
+    grid-template-columns: 5rem auto 23rem;
+  }
+
+  aside .logo h2 {
+    display: none;
+  }
+  aside .sidebar h3 {
+    display: none;
+  }
+  aside .sidebar a {
+    justify-content: center;
+  }
+  aside .sidebar .message_count {
+    position: absolute;
+    left: 70%;
+    top: 10%;
+  }
+  aside .sidebar a:last-child {
+    position: relative;
+  }
+  main .analys {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100dvw;
+    grid-template-columns: 1fr;
+    padding: 0 var(--padding-1);
+  }
+  aside {
+    position: fixed;
+    width: 15rem;
+    background-color: var(--color-white);
+    z-index: 3;
+    box-shadow: 1rem 3rem 4rem var(--color-light);
+    animation: showMenu 0.4s ease forwards;
+    display: none;
+  }
+
+  @keyframes showMenu {
+    to {
+      left: 0;
+    }
+  }
+
+  aside .logo {
+    margin-left: 1rem;
+  }
+  aside .logo h2 {
+    display: inline-block;
+  }
+  aside .sidebar h3 {
+    display: inline-block;
+  }
+  aside .sidebar a {
+    justify-content: start;
+  }
+  aside .sidebar .message_count {
+    position: static;
+  }
+
+  aside .toggle .close {
+    display: inline-block;
+    cursor: pointer;
+  }
+  main .analys {
+    grid-template-columns: 1fr;
+  }
+
+  main .user-list .user {
+    flex-basis: 30%;
+  }
+  main .orders {
+   display: none;
+  }
+}
