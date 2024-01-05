@@ -574,10 +574,12 @@ main .orders tr a {
 }
 
 @media screen and (max-width: 768px) {
+
   .container {
     width: 100dvw;
     grid-template-columns: 1fr;
-    padding: 0 var(--padding-1);
+    margin-top: 3rem;
+    padding:0 var(--padding-1);
     /* margin: 4rem 1rem 0 1rem; */
   }
   aside {
@@ -618,6 +620,8 @@ main .orders tr a {
   }
   main .analys {
     grid-template-columns: 1fr;
+    margin-right: 1rem;
+    
   }
 
   main .user-list .user {
@@ -632,7 +636,9 @@ main .orders tr a {
     padding:0.4rem 2rem;
     gap: 10vw;
     margin: 0 auto;
-    background-color: var(--color-white);
+    background-color: rgba(251, 251, 251, 0.771);
     border-radius: var(--border-radius-1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
     }
 }
