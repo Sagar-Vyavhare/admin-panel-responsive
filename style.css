@@ -33,7 +33,7 @@
   --color-dark-variant: #a3bdcc;
   --color-light: rgba(0, 0, 0, 0.4);
   --box-shadow: 0 2rem 3rem var(--color-light);
-  --nav-bg-color:rgba(0, 0, 0, 0.448);
+  --nav-bg-color:rgba(0, 0, 0, 0.4);
 }
 * {
   margin: 0;
@@ -633,6 +633,9 @@ main .orders tr a {
 
   main .user-list .user {
     flex-basis: 30%;
+  }
+  .right-section{
+    margin-right: 1rem;
   }
 
   .right-section .nav {
