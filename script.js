@@ -1,4 +1,26 @@
+let sideMenu = document.querySelector("aside");
+let menuBtn = document.querySelector("#menu-btn");
+let closeBtn = document.querySelector(".close");
 
+let mode = document.querySelector(".mode");
+mode.addEventListener("click", () => {
+  mode.firstElementChild.classList.toggle("active")
+  mode.lastElementChild.classList.toggle("active")
+  document.body.classList.toggle("dark-mode-variables");
+  // mode.querySelector("> div:nth-child(1)").classList.toggle("active")
+  // mode.querySelector("> div:nth-child(2)").classList.toggle("active")
+ 
+});
+
+
+menuBtn.addEventListener("click", () => {
+  console.log("you clicked me");
+  sideMenu.style.display="block"
+})
+
+closeBtn.addEventListener("click", () => {
+  sideMenu.style.display = "none";
+})
 
 let cources = [
   {
