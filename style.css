@@ -629,6 +629,7 @@ main .orders tr a {
     left: 0;
     width: 100%;
     z-index: 5;
-    background: #000;
-  }
+    margin: 0;
+    padding: 0.2rem;
+    }
 }
