@@ -33,7 +33,7 @@
   --color-dark-variant: #a3bdcc;
   --color-light: rgba(0, 0, 0, 0.4);
   --box-shadow: 0 2rem 3rem var(--color-light);
-  --nav-bg-color:rgba(60, 56, 56, 0.548);
+  --nav-bg-color:rgba(0, 0, 0, 0.448);
 }
 * {
   margin: 0;
